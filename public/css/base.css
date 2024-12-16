@@ -1,0 +1,141 @@
+/* Styles généraux */
+* {
+    font-family: "Lato", sans-serif;
+    --gris: #D3D3D3;
+    --orange: #FF7F32;
+    --jaune: #FFB84D;
+    --bleu: #65AAEE;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Empêche tout débordement horizontal */
+}
+
+/* Navbar */
+.nom_navbar{
+    font-family: "Tilt Neon", sans-serif;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    background-color: var(--orange);
+}
+
+/* Menu */
+.nav-menu {
+    position: fixed; /* Reste fixe lorsqu'il se déplace */
+    top: 49px; /* Positionne le menu sous la navbar */
+    right: 0;
+    background-color: var(--orange);
+    width: 100%; /* Le menu prend toute la largeur de l'écran */
+    transform: translateX(100%); /* Cache le menu sur la droite */
+    transition: transform 0.8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+    z-index: 1; /* Assure que le menu est au-dessus du reste du contenu */
+}
+
+.nav-menu.visible {
+    transform: translateX(0); /* Affiche le menu */
+}
+
+.nav-menu li {
+    width: 100%; /* Chaque élément de menu prend toute la largeur */
+    display: block;
+}
+.nav-menu li:hover{
+    background-color: var(--jaune);
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Hamburger icon */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    background-color: black;
+    transition: all 0.8s ease;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -5px);
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-container a {
+    color:black;
+    text-decoration: none;
+    font-size: 16px;
+}
+.footer-social-media ul,
+.footer-mentions-legales ul,
+.footer-menu ul {
+    list-style-type: none; /* Supprime les puces */
+    margin: 0;             /* Supprime la marge par défaut */
+    padding: 0;            /* Supprime le padding par défaut */
+    display: flex;         /* Aligne les éléments horizontalement */
+    gap: 20px;             /* Espacement entre les éléments */
+}
+.footer-menu li {
+    margin: 0;             /* Supprime toute marge par défaut sur les éléments de la liste */
+}
+
+
+
+
+@media (min-width: 768px) {
+    .nav-menu {
+        position: static;
+        transform: none;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 0px;
+    }
+    .nav-menu li{
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .menu-toggle {
+        display: none;
+    }
+}
