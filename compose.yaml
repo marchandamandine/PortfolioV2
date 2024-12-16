@@ -1,0 +1,39 @@
+
+services:
+###> doctrine/doctrine-bundle ###
+  database:
+    image: mysql:8.0
+    container_name: mysql_portfoliov2
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      # You should definitely change the password in production
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3308:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    volumes:
+      - db_portfoliov2:/var/lib/mysql:rw
+
+
+  ###> symfony/mailer ###
+  mailer:
+    image: axllent/mailpit
+    container_name: mailpit_portfoliov2
+    restart: unless-stopped
+    ports:
+      - '1026:1025'
+      - '8026:8025'
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+###< symfony/mailer ###
+
+
+volumes:
+  db_portfoliov2:
