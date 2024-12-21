@@ -56,42 +56,43 @@
     <!-- Footer -->
     <footer>
         <div class="footer-container">
-
-            <div class="footer-nav-reseau">
-                <div class="footer-logo">
-                    <a href="{{ path('home') }}">Amandine Marchand</a>
-                </div>
-
-                <div class="footer-menu">
-                    <ul>
-                        <li><a href="{{ path('home') }}">Accueil</a></li>
-                        <li><a href="{{ path('about') }}">À propos</a></li>
-                        <li><a href="{{ path('services') }}">Services</a></li>
-                        <li><a href="{{ path('realisations') }}">Réalisations</a></li>
-                        <li><a href="{{ path('contact') }}">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-social-media">
-                    <ul>
-                        <li><a href="www.linkedin.com/in/amandine-marchand-a86569242">LinkedIn</a></li>
-                        <li><a href="https://github.com/marchandamandine">GitHub</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="https://www.youtube.com/@amandineetarnaudvtt">YouTube</a></li>
-                    </ul>
-                </div>
+            <!-- Nom en haut -->
+            <div class="footer-logo">
+                <a href="{{ path('home') }}">Amandine Marchand</a>
             </div>
-
-            <div class="footer-mentions-legales">
-                <p>&copy; 2024 Amandine - Tous droits réservés.</p>
+    
+            <!-- Menu en colonne -->
+            <div class="footer-menu">
                 <ul>
-                    <li><a href="#">Mentions légales</a></li>
-                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li><a href="{{ path('about') }}">À propos</a></li>
+                    <li><a href="{{ path('services') }}">Services</a></li>
+                    <li><a href="{{ path('realisations') }}">Réalisations</a></li>
+                    <li><a href="{{ path('contact') }}">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Réseaux sociaux avec logos -->
+            <div class="footer-social-media">
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/amandine-marchand-a86569242"><img src="/visuels/logo_linkedin.png" alt="logo et lien de la page LinkedIn"></a></li>
+                    <li><a href="https://github.com/marchandamandine"><img src="/visuels/logo_github.png" alt="logo et lien vers la page GitHub"></a></li>
+                    <li><a href="#"><img src="/visuels/logo_facebook.png" alt="logo et lien de la page Facebook"></a></li>
+                    <li><a href="https://www.youtube.com/@amandineetarnaudvtt"><img src="/visuels/logo_youtube.png" alt="logo et lien de la chaine YouTube"></a></li>
+                </ul>
+            </div>
+    
+            <!-- Mentions légales et politique de confidentialité -->
+            <div class="footer-mentions-legales">
+                <p>&copy; 2024 Amandine Marchand - Tous droits réservés.</p>
+                <ul>
+                    <li><a href="{{ path('mentions_legales') }}">Mentions légales</a></li>
+                    <li><a href="{{ path('politique_de_confidentialite') }}">Politique de confidentialité</a></li>
                 </ul>
             </div>
         </div>
-
     </footer>
+    
 
 
 </body>
